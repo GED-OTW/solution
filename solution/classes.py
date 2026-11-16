@@ -1,6 +1,5 @@
 import pygame as pg
 
-
 # A clickable button whose label can change colour when the pointer hovers over it.
 class Button():
     def __init__(self, image, pos, text_input, font, base_colour, hovering_colour):
@@ -36,3 +35,38 @@ class Button():
             self.text = self.font.render(self.text_input, True, self.hovering_colour)
         else:
             self.text = self.font.render(self.text_input, True, self.base_colour)
+
+
+class Character(): # defines attributes of the character class
+    def __init__(self, colour, radius, x, y):
+        self.colour = colour
+        self.radius = radius
+        self.x = x
+        self.y = y
+        self.speed = 250
+
+    def getColour(self):
+        return self.colour
+
+    def getRadius(self):
+        return self.radius
+
+    def getx(self):
+        return self.x
+    
+    def gety(self):
+        return self.y
+
+    def draw(self, SCREEN): # draws the character onto the screen
+        pg.draw.circle(SCREEN, self.colour, (self.x, self.y), self.radius)
+
+    def movement(self, dt): # defines all the base movement keys
+        keys = pg.key.get_pressed()
+        if keys[pg.K_s]:
+            self.y += self.speed * dt
+        if keys[pg.K_a]:
+            self.x -= self.speed * dt
+        if keys[pg.K_w]:
+            self.y -= self.speed * dt
+        if keys[pg.K_d]:
+            self.x += self.speed * dt

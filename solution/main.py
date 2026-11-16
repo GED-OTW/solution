@@ -5,17 +5,18 @@ import classes
 
 # Initialize Pygame and create the shared display used by every screen.
 pg.init()
-
-
 SCREEN = pg.display.set_mode((1280,720))
+clock = pg.time.Clock()
 pg.display.set_caption("Main Menu")
+dt = 0
 
 # Load the image used as the main-menu background.
 BG = pg.image.load("background.jpg")
 
+# player1 = classes.Character((255, 0, 0), 40, 640, 360)
 
 def play():
-    """Display the game placeholder screen until the user returns or exits."""
+    # Display the game placeholder screen until the user returns or exits.
     pg.display.set_caption("Game Screen")
 
     while True:
@@ -24,10 +25,15 @@ def play():
         PLAY_MOUSE_POS = pg.mouse.get_pos()
 
         SCREEN.fill('black')
+        player1 = classes.Character('Red', 40, 640, 360)
+        player1.draw(SCREEN)
+        player1.getx()
+        player1.gety()
+        player1.movement(dt)
 
-        PLAY_TEXT = pg.font.SysFont('comicsans', 45).render("This is the Game Screen", True, "White")
-        PLAY_RECT = PLAY_TEXT.get_rect(center=(640, 260))
-        SCREEN.blit(PLAY_TEXT, PLAY_RECT)
+        # PLAY_TEXT = pg.font.SysFont('comicsans', 45).render("This is the Game Screen", True, "White")
+        # PLAY_RECT = PLAY_TEXT.get_rect(center=(640, 260))
+        # SCREEN.blit(PLAY_TEXT, PLAY_RECT)
 
         PLAY_BACK = classes.Button(image=None, pos=(640, 460), text_input="BACK", font=pg.font.SysFont('comicsans', 75), base_colour="#d7fcd4", hovering_colour="White")
         
