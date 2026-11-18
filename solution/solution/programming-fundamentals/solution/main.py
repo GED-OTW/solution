@@ -24,7 +24,7 @@ def play():
     # Display the game placeholder screen until the user returns or exits.
     pg.display.set_caption("Game Screen")
 
-    player1 = classes.Character('Red', 40, width / 2, height / 2, 1000)
+    player1 = classes.Character('Red', 40, width / 2, height / 2)
 
     while True:
 
@@ -39,7 +39,7 @@ def play():
         # PLAY_RECT = PLAY_TEXT.get_rect(center=(640, 260))
         # SCREEN.blit(PLAY_TEXT, PLAY_RECT)
 
-        PLAY_BACK = classes.Button(image=None, pos=(100, 680), text_input="BACK", font=pg.font.SysFont('comicsans', 75), base_colour="#d7fcd4", hovering_colour="White")
+        PLAY_BACK = classes.Button(image=None, pos=(70, 690), text_input="BACK", font=pg.font.SysFont('comicsans', 45), base_colour="#d7fcd4", hovering_colour="White")
         
         PLAY_BACK.change_colour(PLAY_MOUSE_POS)
         PLAY_BACK.update(SCREEN)
@@ -76,7 +76,7 @@ def options():
         OPTIONS_RECT = OPTIONS_TEXT.get_rect(center=(640, 260))
         SCREEN.blit(OPTIONS_TEXT, OPTIONS_RECT)
 
-        OPTIONS_BACK = classes.Button(image=None, pos=(640, 460), text_input="BACK", font=pg.font.SysFont('comicsans', 75), base_colour="#d7fcd4", hovering_colour="White")
+        OPTIONS_BACK = classes.Button(image=None, pos=(640, 460), text_input="BACK", font=pg.font.SysFont('comicsans', 75), base_colour="#dbf8d9", hovering_colour="White")
         
         OPTIONS_BACK.change_colour(OPTIONS_MOUSE_POS)
         OPTIONS_BACK.update(SCREEN)
