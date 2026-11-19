@@ -2,7 +2,6 @@ import pygame as pg
 import sys
 import classes
 
-
 # Initialize Pygame and create the shared display used by every screen.
 pg.init()
 
@@ -16,7 +15,7 @@ pg.display.set_caption("Main Menu")
 dt = 0
 
 # Load the image used as the main-menu background.
-BG = pg.image.load("background.jpg")
+BG = pg.image.load("solution/background.jpg")
 
 
 
@@ -34,6 +33,7 @@ def play():
         PLAY_MOUSE_POS = pg.mouse.get_pos()
 
         SCREEN.fill('black')
+          
 
         # PLAY_TEXT = pg.font.SysFont('comicsans', 45).render("This is the Game Screen", True, "White")
         # PLAY_RECT = PLAY_TEXT.get_rect(center=(640, 260))
@@ -55,6 +55,7 @@ def play():
 
         player1.draw(SCREEN)
         player1.movement(dt)
+        
 
         dt = clock.tick(60) / 1000
 
